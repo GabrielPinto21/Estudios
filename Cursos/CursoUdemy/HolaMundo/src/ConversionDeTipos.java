@@ -9,7 +9,7 @@ public class ConversionDeTipos {
         double realDouble = Double.parseDouble(realStr);
         System.out.println("realDouble = " + realDouble);
         
-        String logicoStr = "TruE";
+        String logicoStr = "True";
         boolean logicoBoolean = Boolean.parseBoolean(logicoStr);
         System.out.println("logicoBoolean = " + logicoBoolean);
         
