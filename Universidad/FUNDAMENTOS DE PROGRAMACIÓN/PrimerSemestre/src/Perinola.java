@@ -5,10 +5,9 @@ public class Perinola {
     public static void main(String[] args) {
         int i, num=1;
         String xnum;
-        Scanner scanner= new Scanner(System.in);
         for (i=1 ; i<=23 ; i++ ){
            do {
-               if (num>0 && num<6){
+               if (num>0 && num<=6){
                    xnum = JOptionPane.showInputDialog("Ingrese un número del 1 al 6, estudiante " + i);
                }
                else {
