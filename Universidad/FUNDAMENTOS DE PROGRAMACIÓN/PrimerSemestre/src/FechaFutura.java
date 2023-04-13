@@ -26,7 +26,6 @@ public class FechaFutura {
                   mes +=1;
               }
               if (mes==13){
-                  dia = 0;
                   ano +=1;
                   mes=1;
               }
