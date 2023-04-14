@@ -113,8 +113,10 @@ public class Horoscopo {
             return false;
         }*/
         int digito1, digito2, digito3, digito4, digito5, digito6, digito7, digito8;
-        int i,num,numVerificar;
+        int i,num,numVerificar,cifras;
         int dia,mes,ano,num2;
+        String snum;
+
 
         do{
             digito1=0;
@@ -129,6 +131,9 @@ public class Horoscopo {
 
             System.out.println("Ingrese el número YYYYMMDD");
             num = scanner.nextInt();
+            snum = Integer.toString(num);
+
+            cifras = snum.length();
             numVerificar = num;
             num2 = num;
 
@@ -170,7 +175,7 @@ public class Horoscopo {
             mes = (digito5*10)+digito6;
             ano = (digito1*1000)+(digito2*100)+(digito3*10)+digito4;
 
-        }while(numVerificar!=0 || num2<1010000 || dia>=32 || mes>=13);
+        }while(numVerificar!=0 || num2<1010000 || dia>=32 || mes>=13 || cifras!=8);
 
         boolean bisiesto = verificarBisiesto(ano);
 
