@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class Fecha17_04_2023 {
     public static void main(String[] args) {
 
-        int dia1, mes1, ano1, anoEdad=0, mesEdad=0, diaEdad=0;
+        int fecha1, dia1, mes1, ano1, anoEdad = 0, mesEdad = 0, diaEdad = 0;
+
 
         Scanner scanner = new Scanner(System.in);
         Calendar fecha = new GregorianCalendar();
@@ -16,36 +17,38 @@ public class Fecha17_04_2023 {
         int dia = fecha.get(Calendar.DAY_OF_MONTH);
 
         do {
-            System.out.println("Ingrese su fecha de nacimiento en formato DDMMAAAA");
-            int fecha1 = scanner.nextInt();
+            System.out.println("Ingrese su fecha de nacimiento en formato DDMMAAAA: ");
+            fecha1 = scanner.nextInt();
 
-            dia1 = (fecha1/1000000);
-            mes1 = ((fecha1/10000)%100);
-            ano1 = (fecha1%10000);
+            dia1 = (fecha1 / 1000000);
+            mes1 = ((fecha1 / 10000) % 100);
+            ano1 = (fecha1 % 10000);
 
-        }while (dia1>31 || mes1>12 || ano1>ano);
+            mes++;
 
-            if (mes>mes1) {
-              anoEdad = ano - ano1;
-              mesEdad = mes - mes1;
-              diaEdad = dia - dia1;
-            } else if (mes == mes1) {
-                if (dia >= dia1) {
-                    anoEdad = ano - ano1;
-                    mesEdad = mes - mes1;
-                    diaEdad = dia - dia1;
-                }else {
-                    anoEdad = (ano - ano1)-1;
-                    mesEdad = (12-mes1)+mes;
-                    diaEdad = (31 - dia1)+dia;
-                }
-            }else if (mes<mes1){
-                 anoEdad = (ano - ano1)-1;
-                 mesEdad = (12-mes1)+mes;
-                 diaEdad = (31-dia1)+dia;
+        } while ((fecha1 <= 101000) || (fecha1 > 99999999) || (dia1 > 31) || (mes1 > 12) || (ano1 > ano));
+
+        if (mes > mes1) {
+            anoEdad = ano - ano1;
+            mesEdad = mes - mes1;
+            diaEdad = dia - dia1;
+        } else if (mes == mes1) {
+            if (dia >= dia1) {
+                anoEdad = ano - ano1;
+                mesEdad = mes - mes1;
+                diaEdad = dia - dia1;
+            } else {
+                anoEdad = (ano - ano1) - 1;
+                mesEdad = (12 - mes1) + (mes - 1);
+                diaEdad = (31 - dia1) + (dia - 1);
             }
-
-        System.out.println(" La edad de la persona es " + anoEdad + " años, " + mesEdad + " meses" + " y " + diaEdad + " dias" );
+        } else if (mes < mes1) {
+            anoEdad = (ano - ano1) - 1;
+            mesEdad = (12 - mes1) + (mes - 1);
+            diaEdad = (31 - dia1) + (dia - 1);
+        }
+        System.out.println(mes+1 + " " + dia + " " +  ano );
+        System.out.println(" La edad de la persona es " + anoEdad + " años, " + mesEdad + " meses" + " y " + diaEdad + " dias");
 
     }
 }
