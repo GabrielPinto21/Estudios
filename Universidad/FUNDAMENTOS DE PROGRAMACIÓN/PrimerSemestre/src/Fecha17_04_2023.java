@@ -1,54 +1,138 @@
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Fecha17_04_2023 {
     public static void main(String[] args) {
 
-        int fecha1, dia1, mes1, ano1, anoEdad = 0, mesEdad = 0, diaEdad = 0;
-
+        int fecha1,diaNaci, mesNaci, anoNaci, anoEdad = 0, mesEdad = 0, diaEdad = 0, anoActual, mesActual, diaActual;
+        boolean repetir = true;
 
         Scanner scanner = new Scanner(System.in);
         Calendar fecha = new GregorianCalendar();
 
-        int ano = fecha.get(Calendar.YEAR);
-        int mes = fecha.get(Calendar.MONTH);
-        int dia = fecha.get(Calendar.DAY_OF_MONTH);
-
         do {
+            anoActual = fecha.get(Calendar.YEAR);
+            mesActual = fecha.get(Calendar.MONTH);
+            diaActual = fecha.get(Calendar.DAY_OF_MONTH);
+
             System.out.println("Ingrese su fecha de nacimiento en formato DDMMAAAA: ");
             fecha1 = scanner.nextInt();
 
-            dia1 = (fecha1 / 1000000);
-            mes1 = ((fecha1 / 10000) % 100);
-            ano1 = (fecha1 % 10000);
 
-            mes++;
+            mesNaci = ((fecha1 / 10000) % 100);
+            diaNaci = (fecha1 / 1000000);
+            anoNaci = (fecha1 % 10000);
 
-        } while ((fecha1 <= 101000) || (fecha1 > 99999999) || (dia1 > 31) || (mes1 > 12) || (ano1 > ano));
+            mesActual++;
 
-        if (mes > mes1) {
-            anoEdad = ano - ano1;
-            mesEdad = mes - mes1;
-            diaEdad = dia - dia1;
-        } else if (mes == mes1) {
-            if (dia >= dia1) {
-                anoEdad = ano - ano1;
-                mesEdad = mes - mes1;
-                diaEdad = dia - dia1;
+            if (anoNaci >= anoActual) {
+                if (mesNaci < mesActual) {
+                    repetir = false;
+                } else if (mesNaci == mesActual) {
+                    if (diaNaci <= diaActual) {
+                        repetir = false;
+                    } else {
+                        repetir = true;
+                    }
+                } else if (mesNaci > mesActual) {
+                    repetir = true;
+                }
             } else {
-                anoEdad = (ano - ano1) - 1;
-                mesEdad = (12 - mes1) + (mes - 1);
-                diaEdad = (31 - dia1) + (dia - 1);
+                repetir = false;
             }
-        } else if (mes < mes1) {
-            anoEdad = (ano - ano1) - 1;
-            mesEdad = (12 - mes1) + (mes - 1);
-            diaEdad = (31 - dia1) + (dia - 1);
-        }
-        System.out.println(mes+1 + " " + dia + " " +  ano );
-        System.out.println(" La edad de la persona es " + anoEdad + " años, " + mesEdad + " meses" + " y " + diaEdad + " dias");
 
+
+        } while ((fecha1 <= 101000) || (fecha1 > 99999999) || (diaNaci > 31) || (mesNaci > 12) || (anoNaci > anoActual) || repetir);
+
+        if (anoActual > anoNaci){
+            if(mesActual > mesNaci){
+                if(diaActual > diaNaci){
+                    anoEdad = anoActual - anoNaci;
+                    mesEdad = mesActual - mesNaci;
+                    diaEdad = diaActual - diaNaci;
+                    //esta bien
+                } else if(diaActual < diaNaci){
+                    anoEdad = anoActual - anoNaci;
+                    mesEdad = (mesActual - mesNaci) - 1;
+                    diaEdad = (31-diaNaci)+diaActual;
+                    //esta bien
+                } else if(diaActual == diaNaci){
+                    anoEdad = anoActual - anoNaci;
+                    mesEdad = mesActual - mesNaci;
+                    diaEdad = 0;
+                    //esta bien
+                }
+            } else if(mesActual < mesNaci){
+                if(diaActual > diaNaci){
+                    anoEdad = (anoActual-anoNaci)-1;
+                    mesEdad = (mesActual - mesNaci) + 12;
+                    diaEdad = diaActual - diaNaci;
+                    //esta bien
+                } else if(diaActual < diaNaci){
+                    anoEdad = (anoActual - anoNaci)-1;
+                    mesEdad = (mesActual - mesNaci) + 12;
+                    diaEdad = diaNaci - diaActual;
+                    //esta bien
+                } else if(diaActual == diaNaci){
+                    anoEdad = (anoActual - anoNaci) - 1;
+                    mesEdad = (mesActual - mesNaci) + 12;
+                    diaEdad = 0;
+                    //esta bien
+                }
+            } else if(mesActual == mesNaci){
+                if(diaActual > diaNaci){
+                    anoEdad = anoActual - anoNaci;
+                    mesEdad = 0;
+                    diaEdad= diaActual - diaNaci;
+                    //esta bien
+                } else if(diaActual < diaNaci){
+                    anoEdad = (anoActual - anoNaci) - 1;
+                    mesEdad = 11;
+                    diaEdad= (diaActual - diaNaci) + 31;
+                    //esta bien
+
+                } else if(diaActual == diaNaci){
+                    anoEdad = anoActual - anoNaci;
+                    mesEdad = 0;
+                    diaEdad= 0;
+                    //esta bien
+                }
+            }
+        }
+        if (anoActual == anoNaci) {
+            if (mesActual > mesNaci) {
+                if (diaActual > diaNaci) {
+                    anoEdad = 0;
+                    mesEdad = mesActual - mesNaci;
+                    diaEdad = diaActual - diaNaci;
+                    //esta bien
+
+                } else if (diaActual < diaNaci) {
+                    anoEdad = 0;
+                    mesEdad = (mesActual - mesNaci)-1;
+                    diaEdad = (31-diaNaci) + diaActual;
+                    //esta bien
+
+                } else if (diaActual == diaNaci) {
+                    anoEdad = 0;
+                    mesEdad = mesActual - mesNaci;
+                    diaEdad= 0;
+                    //esta bien
+                }
+            } else if (mesActual == mesNaci) {
+                if (diaActual > diaNaci) {
+                    anoEdad = 0;
+                    mesEdad = 0;
+                    diaEdad = diaActual - diaNaci;
+                } else if (diaActual == diaNaci) {
+                    anoEdad = 0;
+                    mesEdad = 0;
+                    diaEdad = 0;
+
+                }
+            }
+        }
+        System.out.println("Su edad es de " + anoEdad + " años " + mesEdad + " meses y " + diaEdad + " dias");
     }
 }
