@@ -19,7 +19,6 @@ public class Fecha17_04_2023 {
             System.out.println("Ingrese su fecha de nacimiento en formato DDMMAAAA: ");
             fecha1 = scanner.nextInt();
 
-
             mesNaci = ((fecha1 / 10000) % 100);
             diaNaci = (fecha1 / 1000000);
             anoNaci = (fecha1 % 10000);
@@ -41,8 +40,6 @@ public class Fecha17_04_2023 {
             } else {
                 repetir = false;
             }
-
-
         } while ((fecha1 <= 101000) || (fecha1 > 99999999) || (diaNaci > 31) || (mesNaci > 12) || (anoNaci > anoActual) || repetir);
 
         if (anoActual > anoNaci){
@@ -51,85 +48,54 @@ public class Fecha17_04_2023 {
                     anoEdad = anoActual - anoNaci;
                     mesEdad = mesActual - mesNaci;
                     diaEdad = diaActual - diaNaci;
-                    //esta bien
                 } else if(diaActual < diaNaci){
                     anoEdad = anoActual - anoNaci;
                     mesEdad = (mesActual - mesNaci) - 1;
                     diaEdad = (31-diaNaci)+diaActual;
-                    //esta bien
                 } else if(diaActual == diaNaci){
                     anoEdad = anoActual - anoNaci;
                     mesEdad = mesActual - mesNaci;
-                    diaEdad = 0;
-                    //esta bien
                 }
             } else if(mesActual < mesNaci){
                 if(diaActual > diaNaci){
                     anoEdad = (anoActual-anoNaci)-1;
                     mesEdad = (mesActual - mesNaci) + 12;
                     diaEdad = diaActual - diaNaci;
-                    //esta bien
                 } else if(diaActual < diaNaci){
                     anoEdad = (anoActual - anoNaci)-1;
                     mesEdad = (mesActual - mesNaci) + 12;
                     diaEdad = diaNaci - diaActual;
-                    //esta bien
                 } else if(diaActual == diaNaci){
                     anoEdad = (anoActual - anoNaci) - 1;
                     mesEdad = (mesActual - mesNaci) + 12;
-                    diaEdad = 0;
-                    //esta bien
                 }
             } else if(mesActual == mesNaci){
                 if(diaActual > diaNaci){
                     anoEdad = anoActual - anoNaci;
-                    mesEdad = 0;
                     diaEdad= diaActual - diaNaci;
-                    //esta bien
                 } else if(diaActual < diaNaci){
                     anoEdad = (anoActual - anoNaci) - 1;
                     mesEdad = 11;
                     diaEdad= (diaActual - diaNaci) + 31;
-                    //esta bien
-
                 } else if(diaActual == diaNaci){
                     anoEdad = anoActual - anoNaci;
-                    mesEdad = 0;
-                    diaEdad= 0;
-                    //esta bien
                 }
             }
         }
         if (anoActual == anoNaci) {
             if (mesActual > mesNaci) {
                 if (diaActual > diaNaci) {
-                    anoEdad = 0;
                     mesEdad = mesActual - mesNaci;
                     diaEdad = diaActual - diaNaci;
-                    //esta bien
-
                 } else if (diaActual < diaNaci) {
-                    anoEdad = 0;
                     mesEdad = (mesActual - mesNaci)-1;
                     diaEdad = (31-diaNaci) + diaActual;
-                    //esta bien
-
                 } else if (diaActual == diaNaci) {
-                    anoEdad = 0;
                     mesEdad = mesActual - mesNaci;
-                    diaEdad= 0;
-                    //esta bien
                 }
             } else if (mesActual == mesNaci) {
                 if (diaActual > diaNaci) {
-                    anoEdad = 0;
-                    mesEdad = 0;
                     diaEdad = diaActual - diaNaci;
-                } else if (diaActual == diaNaci) {
-                    anoEdad = 0;
-                    mesEdad = 0;
-                    diaEdad = 0;
-
                 }
             }
         }
