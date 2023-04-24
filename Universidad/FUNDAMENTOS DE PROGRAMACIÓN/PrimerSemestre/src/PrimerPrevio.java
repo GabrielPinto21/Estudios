@@ -10,7 +10,7 @@ public class PrimerPrevio {
         do {
 
 
-            System.out.println("Ingrese fecha actual en formato DDMMAAAA: ");
+            System.out.print("Ingrese fecha actual en formato DDMMAAAA: ");
             sfecha1 = scanner.nextLine();
             if(sfecha1.matches("\\d{7,8}")){
                 fecha1 = Integer.parseInt(sfecha1);
@@ -25,16 +25,16 @@ public class PrimerPrevio {
 
         } while (!(sfecha1.length() == 8)  || (dia > 30) || (mes > 12) || (ano>2023));
 
-        System.out.println("Ingrese el nombre del remitente: ");
+        System.out.print("Ingrese el nombre del remitente: ");
         nomremi = scanner.nextLine();
 
-        System.out.println("Ingrese el nombre del destinatario: ");
+        System.out.print("Ingrese el nombre del destinatario: ");
         nomdest = scanner.nextLine();
 
-        System.out.println("Ingrese el peso del paquete en Kg: ");
+        System.out.print("Ingrese el peso del paquete en Kg: ");
         peso = scanner.nextInt();
 
-        System.out.println("Ingrese la zona de ubicación:\n1. Argentina\n2. Bolivia\n3. Costa Rica\n4. Chile\n5. Cuba ");
+        System.out.print("Ingrese la zona de ubicación:\n1. Argentina\n2. Bolivia\n3. Costa Rica\n4. Chile\n5. Cuba ");
         pais1 = scanner.nextInt();
 
         if (peso>10){
