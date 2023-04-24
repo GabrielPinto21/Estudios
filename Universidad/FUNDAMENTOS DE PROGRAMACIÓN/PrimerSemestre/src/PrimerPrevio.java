@@ -8,8 +8,6 @@ public class PrimerPrevio {
 
         Scanner scanner = new Scanner(System.in);
         do {
-
-
             System.out.print("Ingrese fecha actual en formato DDMMAAAA: ");
             sfecha1 = scanner.nextLine();
             if(sfecha1.matches("\\d{7,8}")){
@@ -71,9 +69,9 @@ public class PrimerPrevio {
 
             int i=1;
             while (i<=fechaentrega){
-                if (dia>30){
+                if (dia>29){
                     mes++;
-                    dia =1;
+                    dia =0;
                 }
                 if (mes>12){
                     ano++;

@@ -141,4 +141,11 @@ public class Fecha17_04_2023 {
 
         System.out.println("Su edad es de " + anoEdad + " años " + mesEdad + " meses y " + diaEdad + " dias");
     }
+     static boolean verificarBisiesto(int year) {
+         if (year % 4 == 0) {
+             return (year % 100 != 0) || year % 400 == 0;
+         } else {
+             return false;
+         }
+     }
 }
