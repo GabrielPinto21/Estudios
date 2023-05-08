@@ -3,7 +3,7 @@ public class JuegoMD {
     public static void main(String[] args) {
         Panel form = new Panel();
         form.show();
-
+        //editado desde la universidad hola
         Scanner sc = new Scanner(System.in);
 
         String[][] equivalencias = new String[32][2];
