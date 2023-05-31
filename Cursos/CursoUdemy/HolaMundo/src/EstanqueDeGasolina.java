@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class EstanqueDeGasolina {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        /*Scanner sc = new Scanner(System.in);
         double cap;
 
         do {
@@ -22,5 +22,21 @@ public class EstanqueDeGasolina {
         }else if (cap >= 0 ){
             System.out.println("Insuficiente");
         }
+    }*/
+        Scanner sc = new Scanner(System.in);
+
+        double capmax = 70;
+        System.out.println("Ingrese la medida actual en litro (Max 70L)");
+        double  cap = sc.nextDouble();
+
+        String max = (cap == capmax) ? "Estanque lleno"
+                : (cap >= 60 && cap < capmax) ? "Estanque casi lleno"
+                : (cap >= 40 && cap < capmax) ? "Estanque 3/4"
+                : (cap >= 35 && cap < capmax)? "Medio Estanque"
+                : (cap >= 20 && cap < capmax)? "Estanque casi lleno"
+                : (cap >= 0 && cap < capmax)? "Insuficiente" :
+                "Valor fuera de los parametros";
+        System.out.println("Nivel de estanque = " + max);
     }
 }
+
