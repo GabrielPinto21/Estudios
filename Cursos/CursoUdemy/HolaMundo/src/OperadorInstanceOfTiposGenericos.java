@@ -1,9 +1,9 @@
-public class OperadorInstanceofTiposGenericos {
+public class OperadorInstanceOfTiposGenericos {
     public static void main(String[] args) {
 
         Object texto = "Creando un objeto de la clase String ... que tal!";
 
-        Number num = Integer.valueOf(7); //7;
+        Number num = Integer.valueOf(7); // 7;
 
         Boolean b1 = texto instanceof String;
 
@@ -31,7 +31,6 @@ public class OperadorInstanceofTiposGenericos {
         System.out.println("num es del tipo Double = " + b1);
 
         Number decimal = Float.valueOf(45.54f);
-
         b1 = decimal instanceof Double;
         System.out.println("decimal es del tipo Double = " + b1);
 
@@ -46,6 +45,5 @@ public class OperadorInstanceofTiposGenericos {
 
         b1 = b1 instanceof Boolean;
         System.out.println("b1 es del tipo Boolean = " + b1);
-
     }
 }

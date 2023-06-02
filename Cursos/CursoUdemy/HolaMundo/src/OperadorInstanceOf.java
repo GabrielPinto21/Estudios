@@ -1,6 +1,4 @@
-import javax.swing.text.StyledEditorKit;
-
-public class OperadorInstanceof {
+public class OperadorInstanceOf {
     public static void main(String[] args) {
 
         String texto = "Creando un objeto de la clase String ... que tal!";
@@ -24,7 +22,6 @@ public class OperadorInstanceof {
         System.out.println("num es del tipo Object = " + b1);
 
         Double decimal = 45.54;
-
         b1 = decimal instanceof Number;
         System.out.println("decimal es del tipo Number = " + b1);
 

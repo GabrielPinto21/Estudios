@@ -7,24 +7,23 @@ public class EjemploStringValidar {
 
         System.out.println("esNulo = " + esNulo);
 
-        if (esNulo){
-            curso = "Programación Java";//"Programación Java";
+        if(esNulo) {
+            curso = "Programación Java";
         }
 
         boolean esVacio = curso.length() == 0;
 
         System.out.println("esVacio = " + esVacio);
-        
+
         boolean esVacio2 = curso.isEmpty();
         System.out.println("esVacio2 = " + esVacio2);
-        
-        boolean esBlanco= curso.isBlank();
+
+        boolean esBlanco = curso.isBlank();
         System.out.println("esBlanco = " + esBlanco);
 
-        if (esBlanco == false){
+        if(esBlanco == false) {
             System.out.println(curso.toUpperCase());
-            System.out.println("Bienvenido al curos ".concat(curso));
+            System.out.println("Bienvenido al curso ".concat(curso));
         }
-
     }
 }
