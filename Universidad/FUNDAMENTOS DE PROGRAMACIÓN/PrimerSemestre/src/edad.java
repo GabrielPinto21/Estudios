@@ -1,6 +1,4 @@
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -10,7 +8,7 @@ public class edad {
 
         LocalDateTime dateTime = LocalDateTime.now();
 
-        DateTimeFormatter formatters = DateTimeFormatter.ofPattern("dd-MM-YYYY");
+        DateTimeFormatter formatters = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         String fechaActual = dateTime.format(formatters);
 
         String sdiaActual = fechaActual.substring(0, 2);
@@ -24,11 +22,11 @@ public class edad {
 
         int dia,ano,mes,num,diaEdad=0,mesEdad=0,anoEdad=0;
 
-        boolean repetir = true;
+        boolean repetir;
 
         do{
-            repetir = true;
-            System.out.println("Ingrese el número en formato DDMMYYYY");
+            repetir = false;
+            System.out.println("Ingrese la fecha en formato DDMMYYYY");
             num = scanner.nextInt();
 
             ano = num%10000;
@@ -44,11 +42,10 @@ public class edad {
                     } else{
                         repetir = true;
                     }
-                } else if(mes>mesActual){
+                } else {
                     repetir = true;
                 }
             }
-
         }while(num<=101000 || num>99999999 || dia>31 || mes>=13 || ano>anoActual || repetir);
 
         if(mesActual > mes){
