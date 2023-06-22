@@ -43,10 +43,7 @@ public class ParqueDelCafePrevio2 {
                     scanner.nextLine();
                 }
 
-                boolean permitido= true;
-                if ((acrofobiaAtracciones ==3) && (edad[j] < 18) || (edad[j] > 40)){
-                    permitido = false;
-                }
+                boolean permitido= ((acrofobiaAtracciones != 3) || (edad[j] >= 18)) && (edad[j] <= 40);
                 if (altura[j] < alturaMinAtraccion){
                     permitido = false;
                 }
@@ -68,7 +65,7 @@ public class ParqueDelCafePrevio2 {
                 }
             }
         }
-        System.out.println("");
+        System.out.println();
         System.out.println("--------------------------------------------------------------");
         System.out.println("FIN DE LA JORNADA");
         System.out.println("--------------------------------------------------------------");
