@@ -2,101 +2,83 @@ import java.util.Scanner;
 
 public class ExamenFinal{
     public static void main(String[] args) {
-        Scanner sc= new Scanner(System.in);
-
-        double tercerPrevio,notaMayor=0, notaMenor=0;
+        Scanner sc = new Scanner(System.in);
+        double previo3, notaMayor = 0, notaMenor = 0;
         int opcion;
-        boolean continuar= true;
-        final int  previo1=0, previo2=1, quiz1=2, quiz2=3, tallerIndividual=4, tallerGrupal=5, examenFinal=6;
+        boolean continuar = true;
+        double[][] calificaciones = new double[5][7];
+        double[] definitivas = new double[5];
 
-        double [][] calificaciones  = new double[5][7];
-        double definitivas [] = new double [1];
+        while (continuar) {
+            do {
+                System.out.println("Qué nota desea ingresar:\n1. Ingresar Notas\n2. Definitivas\n3. Buscar Nota\n4. Salir");
+                opcion = sc.nextInt();
+            } while (opcion < 1 || opcion > 4);
 
-       while(continuar) {
-           do {
-               System.out.println("Que nota desea ingresar:\n1. Previo 1\n2. Previo 2\n3. Quiz 1\n4. Quiz 2\n5. Taller individual\n6. Taller Grupal\n7. Examen Final\n8. Defnitiva\n9. Salir");
-               opcion = sc.nextInt();
-           } while (opcion < 1 || opcion > 9);
+            switch (opcion) {
+                case 1 -> {
+                    for (int i = 0; i < calificaciones.length; i++) {
+                        for (int j = 0; j < calificaciones[0].length; j++) {
+                            do {
+                                System.out.println("Ingrese la calificación para la materia " + (i + 1) + " en la columna " + (j + 1) + ": ");
+                                double calificacion = sc.nextDouble();
 
-           switch (opcion) {
-               case 1 -> {
-                   for (int i = 0; i < 5; i++) {
-                       do {
-                           System.out.println("Ingrese la nota del previo 1, de la fila  " + (i + 1));
-                           calificaciones[i][previo1] = sc.nextDouble();
-                       } while (calificaciones[i][previo1] < 1.0 || calificaciones[i][previo1] > 5.0);
-                   }
-               }
-               case 2 -> {
-                   for (int i = 0; i < 5; i++) {
-                       do {
-                           System.out.println("Ingrese la nota del previo 2, de la fila  " + (i + 1));
-                           calificaciones[i][previo2] = sc.nextDouble();
-                       } while (calificaciones[i][previo2] < 1.0 || calificaciones[i][previo2] > 5.0);
-                   }
-               }
-               case 3 -> {
-                   for (int i = 0; i < 5; i++) {
-                       do {
-                           System.out.println("Ingrese la nota del quiz 1, de la fila  " + (i + 1));
-                           calificaciones[i][quiz1] = sc.nextDouble();
-                       } while (calificaciones[i][quiz1] < 1.0 || calificaciones[i][quiz1] > 5.0);
-                   }
-               }
-               case 4 -> {
-                   for (int i = 0; i < 5; i++) {
-                       do {
-                           System.out.println("Ingrese la nota del quiz 2, de la fila  " + (i + 1));
-                           calificaciones[i][quiz2] = sc.nextDouble();
-                       } while (calificaciones[i][quiz2] < 1.0 || calificaciones[i][quiz2] > 5.0);
-                   }
-               }
-               case 5 -> {
-                   for (int i = 0; i < 5; i++) {
-                       do {
-                           System.out.println("Ingrese la nota del taller Individual, de la fila  " + (i + 1));
-                           calificaciones[i][tallerIndividual] = sc.nextDouble();
-                       } while (calificaciones[i][tallerIndividual] < 1.0 || calificaciones[i][tallerIndividual] > 5.0);
-                   }
-               }
-               case 6 -> {
-                   for (int i = 0; i < 5; i++) {
-                       do {
-                           System.out.println("Ingrese la nota del taller Grupal, de la fila  " + (i + 1));
-                           calificaciones[i][tallerGrupal] = sc.nextDouble();
-                       } while (calificaciones[i][tallerGrupal] < 1.0 || calificaciones[i][tallerGrupal] > 5.0);
-                   }
-               }
-               case 7 -> {
-                   for (int i = 0; i < 5; i++) {
-                       do {
-                           System.out.println("Ingrese la nota del examen Final, de la fila  " + (i + 1));
-                           calificaciones[i][examenFinal] = sc.nextDouble();
-                       } while (calificaciones[i][examenFinal] < 1.0 || calificaciones[i][examenFinal] > 5.0);
-                   }
-               }
-               case 8 -> {
-                   for (int i=0; i < definitivas.length; i++) {
-                       tercerPrevio = ((calificaciones[i][quiz1])+(calificaciones[i][quiz2])+(calificaciones[i][tallerIndividual])+(calificaciones[i][tallerGrupal]))/4;
-                       definitivas[i] = ((calificaciones[i][previo1]+calificaciones[i][previo2]+tercerPrevio/3)*0.7)+((calificaciones[i][examenFinal])*0.3);
-                   }
+                                if (calificacion < 1.0 || calificacion > 5.0) {
+                                    System.out.println("La nota ingresada es incorrecta, debe de estar en el rando de 1.0 a 5.0");
+                                }
+                                calificaciones[i][j] = calificacion;
 
-                   for (int i=0; i< definitivas.length; i++){
-                       if(notaMayor <= definitivas[i]){
-                           notaMayor = definitivas[i];
-                       }
-                       if(notaMenor >= definitivas[i]){
-                           notaMenor = definitivas[i];
-                       }
-                   }
-               }
-               case 9 -> {
-                   continuar = false;
-               }
+                            } while (calificaciones[i][j] < 1 || calificaciones[i][j] > 5);
+                        }
+                    }
+                }
+                case 2 -> {
+                    for (int i = 0; i < calificaciones.length; i++) {
+                        double quiz1 = calificaciones[i][2];
+                        double quiz2 = calificaciones[i][3];
+                        double tallerIndividual = calificaciones[i][4];
+                        double tallerGrupal = calificaciones[i][5];
+                        double examenFinal = calificaciones[i][6];
+                            previo3 = (quiz1 + quiz2 + tallerIndividual + tallerGrupal ) / 4;
+                            definitivas[i] = ((calificaciones[i][0]+calificaciones[i][1]+previo3)/3*0.7)+(examenFinal*0.3);
 
-           }
-       }
-        System.out.println("La nota mayor es " + notaMayor + " y la nota menor es " + notaMenor);
+                        if (definitivas[i] < notaMenor  ) {
+                            notaMenor = definitivas[i];
+                        }
+                            if (definitivas[i] > notaMayor ) {
+                                notaMayor = definitivas[i];
+                            }
+                    }
+                    System.out.println("Las notas definitivas son: ");
+                    for (int i=0 ; i< definitivas.length; i ++){
+                        System.out.println("Nota de la materia " + (i+1) + ": " + definitivas[i]);
+                    }
+                    System.out.println("La nota mas alta es: " + notaMayor);
+                    System.out.println("La nota mas baja es: " + notaMenor);
+                }
+                case 3 -> {
+
+                    boolean valoresValidos = false;
+                    do {
+                        System.out.println("Ingrese la posición de la fila que desea saber");
+                        int fila = sc.nextInt();
+
+                        System.out.println("Ingrese la posición de la columna que desea saber");
+                        int columna = sc.nextInt();
+
+                        if (fila < 1 || fila > calificaciones.length || columna < 1 || columna > calificaciones[0].length) {
+                            System.out.println("Error: La fila y columna ingresadas no son válidas.");
+                        } else {
+                            double nota = calificaciones[fila - 1][columna - 1];
+                            System.out.println("La nota es: " + nota);
+                            valoresValidos = true;
+                        }
+                    } while (!valoresValidos);
+                }
+                case 4 -> continuar = false;
+            }
+        }
     }
 }
+
 
