@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ExamenFinal{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double previo3, notaMayor = 0, notaMenor = 0;
+        double previo3, notaMayor = 0, notaMenor = 5;
         int opcion;
         boolean continuar = true;
         double[][] calificaciones = new double[5][7];
@@ -24,7 +24,7 @@ public class ExamenFinal{
                                 double calificacion = sc.nextDouble();
 
                                 if (calificacion < 1.0 || calificacion > 5.0) {
-                                    System.out.println("La nota ingresada es incorrecta, debe de estar en el rando de 1.0 a 5.0");
+                                    System.err.println("La nota ingresada es incorrecta, debe de estar en el rando de 1.0 a 5.0");
                                 }
                                 calificaciones[i][j] = calificacion;
 
@@ -51,13 +51,15 @@ public class ExamenFinal{
                     }
                     System.out.println("Las notas definitivas son: ");
                     for (int i=0 ; i< definitivas.length; i ++){
-                        System.out.println("Nota de la materia " + (i+1) + ": " + definitivas[i]);
+                        System.out.printf("Nota de la materia " + (i+1) + ": %.2f" ,  definitivas[i]);
+                        System.out.println();
                     }
-                    System.out.println("La nota mas alta es: " + notaMayor);
-                    System.out.println("La nota mas baja es: " + notaMenor);
+                    System.out.printf("La nota mas alta es: %.2f", notaMayor);
+                    System.out.println();
+                    System.out.printf("La nota mas baja es: %.2f",  notaMenor);
+                    System.out.println();
                 }
                 case 3 -> {
-
                     boolean valoresValidos = false;
                     do {
                         System.out.println("Ingrese la posición de la fila que desea saber");
@@ -67,7 +69,7 @@ public class ExamenFinal{
                         int columna = sc.nextInt();
 
                         if (fila < 1 || fila > calificaciones.length || columna < 1 || columna > calificaciones[0].length) {
-                            System.out.println("Error: La fila y columna ingresadas no son válidas.");
+                            System.err.println("Error: La fila y columna ingresadas no son válidas.");
                         } else {
                             double nota = calificaciones[fila - 1][columna - 1];
                             System.out.println("La nota es: " + nota);
@@ -80,5 +82,3 @@ public class ExamenFinal{
         }
     }
 }
-
-
