@@ -1,6 +1,6 @@
 public class PrimitivosEnteros {
     public static void main(String[] args) {
-
+        
         byte numeroByte = 127;
         System.out.println("numeroByte = " + numeroByte);
         System.out.println("tipo byte corresponde en byte a " + Byte.BYTES);
@@ -32,6 +32,6 @@ public class PrimitivosEnteros {
         System.out.println("valor mínimo de un long: " + Long.MIN_VALUE);
 
         var numeroVar = 9223372036854775808f;
-
+        
     }
 }
