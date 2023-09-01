@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class EjemploAutomovilArreglo {
+public class aEjemploAutomovilArreglo {
     public static void main(String[] args) {
 
         Persona conductorSubaru = new Persona("Luci", "Martínez");
