@@ -26,7 +26,6 @@ public class Test {
             if (j.getAutor().equalsIgnoreCase(imprimir)){
                 System.out.println("El nombre de la serie  del autor " + imprimir + " es: " + j.getTitulo());
             }
-
         }
 
 
