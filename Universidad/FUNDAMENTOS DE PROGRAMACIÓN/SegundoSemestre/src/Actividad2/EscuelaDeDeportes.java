@@ -6,145 +6,6 @@ import java.util.Scanner;
 import java.util.SortedMap;
 
 public class EscuelaDeDeportes {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        EscuelaDeDeportes escuela = new EscuelaDeDeportes();
-
-        while (true) {
-            System.out.println("Menú:");
-            System.out.println("1. Agregar deportista");
-            System.out.println("2. Encontrar futbolista con más goles");
-            System.out.println("3. Encontrar basquetbolista con más cestas");
-            System.out.println("4. Encontrar atleta con mejor rendimiento");
-            System.out.println("5. Salir");
-            System.out.print("Seleccione una opción: ");
-
-            int opcion = scanner.nextInt();
-            scanner.nextLine(); // Consumir el salto de línea
-
-            switch (opcion) {
-                case 1:
-                    agregarDeportista(escuela, scanner);
-                    break;
-                case 2:
-                    mostrarFutbolistaConMasGoles(escuela);
-                    break;
-                case 3:
-                    mostrarBasquetbolistaConMasCestas(escuela);
-                    break;
-                case 4:
-                    mostrarAtletaConMejorRendimiento(escuela);
-                    break;
-                case 5:
-                    System.out.println("Saliendo del programa.");
-                    scanner.close();
-                    System.exit(0);
-                default:
-                    System.out.println("Opción no válida. Intente de nuevo.");
-                    break;
-            }
-        }
-    }
-
-
-    private static void agregarDeportista(EscuelaDeDeportes escuela, Scanner scanner) {
-
-        System.out.print("Ingrese la identificacion del deportista: ");
-        int id = scanner.nextInt();
-        scanner.nextLine();
-
-        System.out.print("Ingrese el nombre del deportista: ");
-        String nombre = scanner.nextLine();
-
-        System.out.print("Ingrese los apellidos del deportista: ");
-        String apellidos = scanner.nextLine();
-
-        String genero;
-        do {
-            System.out.print("Ingrese su género (Masculino(M)/Femenino(F)): ");
-            genero = scanner.nextLine().trim().toLowerCase();
-
-            if (!genero.equals("masculino") && !genero.equals("m") && !genero.equals("femenino") && !genero.equals("f")) {
-                System.out.println("Género no válido. Por favor, ingrese 'Masculino (M) ' o 'Femenino (F)'.");
-            }
-        } while (!genero.equals("masculino") && !genero.equals("m") && !genero.equals("femenino") && !genero.equals("f"));
-
-        int edad;
-        do{
-            System.out.print("Ingrese la edad del deportista: ");
-             edad = scanner.nextInt();
-
-            if (edad <= 5 || edad >= 17){
-                System.out.println("Edad no permitida");
-
-            }
-        }while(edad <= 5 || edad >= 17);
-
-        scanner.nextLine(); // Consumir el salto de línea
-
-
-        System.out.print("Ingrese el tipo de deportista (Futbolista/Basquetbolista/Atleta): ");
-        String tipoDeportista = scanner.nextLine();
-
-        switch (tipoDeportista) {
-            case "Futbolista":
-                System.out.print("Ingrese la cantidad de goles del futbolista en entrenamientos: ");
-                int goles = scanner.nextInt();
-                escuela.agregarDeportista(new Futbolista(id, nombre, apellidos, genero, edad, goles));
-                break;
-            case "Basquetbolista":
-                System.out.print("Ingrese la cantidad de cestas del basquetbolista en entrenamientos: ");
-                int cestas = scanner.nextInt();
-                escuela.agregarDeportista(new Basquetbolista(id, nombre, apellidos, genero, edad, cestas));
-                break;
-            case "Atleta":
-                System.out.print("Ingrese la cantidad de kilómetros recorridos por el atleta en entrenamientos: ");
-                float kilometrosRecorridos = scanner.nextFloat();
-                escuela.agregarDeportista(new Atleta(id, nombre, apellidos, genero, edad, kilometrosRecorridos));
-                break;
-            default:
-                System.out.println("Tipo de deportista no válido. Debe ser 'Futbolista', 'Basquetbolista' o 'Atleta'.");
-        }
-    }
-
-    private static void mostrarFutbolistaConMasGoles(EscuelaDeDeportes escuela) {
-        Futbolista futbolista = escuela.encontrarFutbolistaConMasGoles();
-        if (futbolista != null) {
-            System.out.println("Futbolista con más goles:");
-            System.out.println("Nombre: " + futbolista.getNombre());
-            System.out.println("Goles: " + futbolista.getGoles());
-            System.out.println("Categoria: " + futbolista.getCategoria());
-        } else {
-            System.err.println("No hay futbolistas registrados.");
-            System.out.println();
-        }
-    }
-
-    private static void mostrarBasquetbolistaConMasCestas(EscuelaDeDeportes escuela) {
-        Basquetbolista basquetbolista = escuela.encontrarBasquetbolistaConMasCestas();
-        if (basquetbolista != null) {
-            System.out.println("Basquetbolista con más cestas:");
-            System.out.println("Nombre: " + basquetbolista.getNombre());
-            System.out.println("Cestas: " + basquetbolista.getCestas());
-            System.out.println("Categoria: " + basquetbolista.getCategoria());
-        } else {
-            System.err.println("No hay basquetbolistas registrados.");
-            System.out.println();
-        }
-    }
-
-    private static void mostrarAtletaConMejorRendimiento(EscuelaDeDeportes escuela) {
-        Atleta atleta = escuela.encontrarAtletaConMejorRendimiento();
-        if (atleta != null) {
-            System.out.println("Atleta con mejor rendimiento:");
-            System.out.println("Nombre: " + atleta.getNombre());
-            System.out.println("Kilómetros recorridos: " + atleta.getKilometrosRecorridos());
-            System.out.println("Categoria: " + atleta.getCategoria());
-        } else {
-            System.err.println("No hay atletas registrados.");
-            System.out.println();
-        }
-    }
 
     private List<Deportista> deportistas;
 
@@ -152,10 +13,83 @@ public class EscuelaDeDeportes {
         deportistas = new ArrayList<>();
     }
 
-    public void agregarDeportista(Deportista deportista) {
-        deportistas.add(deportista);
+
+
+    public void agregarDeportista(int id, String nombre, String apellidos, String genero,
+                                  int edad, int goles, int cestas, float kilometrosRecorridos,
+                                  String tipoDeportista) {
+
+
+        switch (tipoDeportista) {
+            case "futbolista":
+                deportistas.add(new Futbolista(id, nombre, apellidos, genero, edad, goles));
+                System.out.println("-------------------------------------------------------------------");
+                System.out.println("Se registró el Futbolista");
+                break;
+            case "basquetbolista":
+                deportistas.add(new Basquetbolista(id, nombre, apellidos, genero, edad, cestas));
+                System.out.println("-------------------------------------------------------------------");
+                System.out.println("Se registró el Basquetbolista");
+                break;
+            case "atleta":
+                deportistas.add(new Atleta(id, nombre, apellidos, genero, edad, kilometrosRecorridos));
+                System.out.println("-------------------------------------------------------------------");
+                System.out.println("Se registró el Atleta");
+                break;
+        }
     }
 
+    public String mostrarFutbolistaConMasGoles() {
+        String mensaje = "";
+        Futbolista futbolista = encontrarFutbolistaConMasGoles();
+        if (futbolista != null) {
+            mensaje+= "-------------------------------------------------------------------\n";
+            mensaje += "Futbolista con más goles:\n";
+            mensaje += "Nombre: " + futbolista.getNombre() + "\n";
+            mensaje += "Goles: " + futbolista.getGoles()+ "\n";
+            mensaje += "Categoria: " + futbolista.getCategoria()+ "\n";
+            mensaje+= "-------------------------------------------------------------------\n";
+        } else {
+            mensaje+= "-------------------------------------------------------------------\n";
+            mensaje += "No hay futbolistas registrados.\n";
+            mensaje+= "-------------------------------------------------------------------\n";
+        }
+        return mensaje;
+    }
+    public String mostrarBasquetbolistaConMasCestas() {
+        String mensaje = "";
+        Basquetbolista basquetbolista = encontrarBasquetbolistaConMasCestas();
+        if (basquetbolista != null) {
+            mensaje+= "-------------------------------------------------------------------\n";
+            mensaje += "Basquetbolista con más cestas:\n";
+            mensaje += "Nombre: " + basquetbolista.getNombre() + "\n";
+            mensaje += "Cestas: " + basquetbolista.getCestas() + "\n";
+            mensaje += "Categoria: " + basquetbolista.getCategoria() + "\n";
+            mensaje+= "-------------------------------------------------------------------\n";
+        } else {
+            mensaje+= "-------------------------------------------------------------------\n";
+            mensaje += "No hay basquetbolistas registrados.\n";
+            mensaje+= "-------------------------------------------------------------------\n";
+        }
+        return mensaje;
+    }
+    public String mostrarAtletaConMejorRendimiento() {
+        String mensaje = "";
+        Atleta atleta = encontrarAtletaConMejorRendimiento();
+        if (atleta != null) {
+            mensaje+= "-------------------------------------------------------------------\n";
+            mensaje += "Atleta con mejor rendimiento:\n";
+            mensaje += "Nombre: " + atleta.getNombre() + "\n";
+            mensaje += "Kilómetros recorridos: " + atleta.getKilometrosRecorridos() + "\n";
+            mensaje += "Categoria: " + atleta.getCategoria() + "\n";
+            mensaje+= "-------------------------------------------------------------------\n";
+        } else {
+            mensaje+= "-------------------------------------------------------------------\n";
+            mensaje += "No hay atletas registrados.\n";
+            mensaje+= "-------------------------------------------------------------------\n";
+        }
+        return mensaje;
+    }
     public Futbolista encontrarFutbolistaConMasGoles() {
         Futbolista futbolistaConMasGoles = null;
         int maxGoles = -1;
@@ -172,7 +106,6 @@ public class EscuelaDeDeportes {
 
         return futbolistaConMasGoles;
     }
-
     public Basquetbolista encontrarBasquetbolistaConMasCestas() {
         Basquetbolista basquetbolistaConMasCestas = null;
         int maxCestas = -1;
@@ -189,7 +122,6 @@ public class EscuelaDeDeportes {
 
         return basquetbolistaConMasCestas;
     }
-
     public Atleta encontrarAtletaConMejorRendimiento() {
         Atleta atletaConMejorRendimiento = null;
         double maxKilometros = -1;
