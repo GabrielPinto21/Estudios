@@ -51,7 +51,6 @@ public class EscuelaDeDeportesCliente {
             }
         }
     }
-
     public static void agregarDeportista(EscuelaDeDeportes escuela, Scanner scanner){
 
         System.out.println("-------------------------------------------------------------------");
@@ -129,9 +128,6 @@ public class EscuelaDeDeportesCliente {
                 System.out.println("-------------------------------------------------------------------");
                 System.out.println("Tipo de deportista no válido. Debe ser 'Futbolista', 'Basquetbolista' o 'Atleta'.");
         }
-
         escuela.agregarDeportista( id, nombre, apellidos, genero, edad, goles, cestas, kilometrosRecorridos, tipoDeportista);
-
     }
-
 }
