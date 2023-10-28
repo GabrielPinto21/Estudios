@@ -32,6 +32,8 @@ public class CalculadoraControlador {
 	
 	@FXML
 	private Label lblMensaje;
+	
+	private String num1, num2;
 
 	private Calculadora calculadora = new Calculadora();
 
@@ -49,8 +51,8 @@ public class CalculadoraControlador {
 
 			String nuevoResultado = txtResultado.getText().replace(',', '.');
 
-			double n = Double.parseDouble(nuevoResultado);
-			calculadora.sumarMemoria(n);
+			double variable = Double.parseDouble(nuevoResultado);
+			calculadora.sumarMemoria(variable);
 		}
 	}
 
@@ -71,9 +73,7 @@ public class CalculadoraControlador {
 	@FXML
 	void dividir(ActionEvent e) {
 
-		String num1 = txtNumero1.getText();
-		String num2 = txtNumero2.getText();
-
+		numerosObtenidos();
 		String msg = calculadora.div(num1, num2);
 		txtResultado.setText(msg);
 		
@@ -84,19 +84,16 @@ public class CalculadoraControlador {
 
 	@FXML
 	void multiplicar(ActionEvent e) {
-		String num1 = txtNumero1.getText();
-		String num2 = txtNumero2.getText();
-
+		
+		numerosObtenidos();
 		String msg = calculadora.mult(num1, num2);
 		txtResultado.setText(msg);
-
 	}
 
 	@FXML
 	void restar(ActionEvent e) {
-		String num1 = txtNumero1.getText();
-		String num2 = txtNumero2.getText();
-
+		
+		numerosObtenidos();
 		String msg = calculadora.resta(num1, num2);
 		txtResultado.setText(msg);
 
@@ -105,8 +102,8 @@ public class CalculadoraControlador {
 	@FXML
 	void sumar(ActionEvent e) {
 
-		String num1 = txtNumero1.getText();
-		String num2 = txtNumero2.getText();
+		numerosObtenidos();
+
 
 		String msg = calculadora.suma(num1, num2);
 		txtResultado.setText(msg);
@@ -128,6 +125,12 @@ public class CalculadoraControlador {
 		txtNumero1.clear();
 		txtNumero2.clear();
 		txtResultado.clear();
+	}
+	
+	public void numerosObtenidos() {
+		 num1 = txtNumero1.getText();
+		 num2 = txtNumero2.getText();
+		
 	}
 
 }
