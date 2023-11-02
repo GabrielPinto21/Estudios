@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="351.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="impuesto.controlador.ImpuestosControlador">
+   <children>
+      <TitledPane animated="false" prefHeight="234.0" prefWidth="351.0" text="Datos del vehículo">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="208.0" prefWidth="346.0">
+               <children>
+                  <Label layoutX="17.0" layoutY="14.0" text="Placa">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="52.0" text="Marca">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="17.0" layoutY="92.0" text="Línea">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="17.0" layoutY="131.0" text="Modelo">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="19.0" layoutY="169.0" text="Valor">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtPlaca" layoutX="97.0" layoutY="14.0" />
+                  <TextField fx:id="txtMarca" layoutX="97.0" layoutY="52.0" />
+                  <TextField fx:id="txtLinea" layoutX="97.0" layoutY="92.0" />
+                  <TextField fx:id="txtModelo" layoutX="97.0" layoutY="131.0" />
+                  <TextField fx:id="txtValor" layoutX="97.0" layoutY="169.0" />
+                  <Button layoutX="276.0" layoutY="67.0" mnemonicParsing="false" onAction="#buscar" text="Buscar" />
+                  <Button layoutX="272.0" layoutY="119.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane animated="false" layoutY="234.0" prefHeight="189.0" prefWidth="351.0" text="Descuentos">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="208.0" prefWidth="347.0">
+               <children>
+                  <CheckBox fx:id="cbProntoPago" layoutX="63.0" layoutY="23.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="141.0" text="Pronto Pago">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="cbServicioPublico" layoutX="63.0" layoutY="61.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="146.0" text="Servicio Público">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="cbTrasladoCuenta" layoutX="63.0" layoutY="99.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="174.0" text="Traslado de cuenta">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane animated="false" layoutY="423.0" prefHeight="153.0" prefWidth="351.0" text="Resultados">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="208.0" prefWidth="347.0">
+               <children>
+                  <Label layoutX="42.0" layoutY="14.0" text="Total a pagar">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtResultado" editable="false" layoutX="147.0" layoutY="14.0" />
+                  <Button layoutX="47.0" layoutY="52.0" mnemonicParsing="false" onAction="#limpiar" text="Limpiar" />
+                  <Button layoutX="150.0" layoutY="51.0" mnemonicParsing="false" onAction="#anadir" text="Añadir" />
+                  <Button layoutX="245.0" layoutY="52.0" mnemonicParsing="false" onAction="#calcularImpuestos" text="Calcular" />
+                  <Label fx:id="lblMensaje" layoutX="161.0" layoutY="89.0" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+   </children>
+</AnchorPane>
