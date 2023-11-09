@@ -19,6 +19,7 @@ public class ImpuestoMain extends Application {
     	
         stage.setTitle("Bienvenido");
         stage.setScene(new Scene(loader.load()));
+        stage.setResizable(false);
         stage.show();
     }
 }

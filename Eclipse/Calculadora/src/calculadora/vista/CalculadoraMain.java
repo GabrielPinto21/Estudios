@@ -18,6 +18,7 @@ public class CalculadoraMain extends Application {
     	
         stage.setTitle("BIENVENIDO");
         stage.setScene(new Scene(loader.load()));
+        stage.setResizable(false);
         stage.show();
     }
 }
