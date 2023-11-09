@@ -1,7 +1,6 @@
 package parqueadero.controlador;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,78 +13,112 @@ import parqueadero.modelo.Parqueadero;
 
 public class ParqueaderoControlador {
 
-    @FXML // ResourceBundle that was given to the FXMLLoader
+    @FXML 
     private ResourceBundle resources;
 
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
+    @FXML 
     private URL location;
 
-    @FXML // fx:id="cboTipo"
-    private ComboBox cboTipo; // Value injected by FXMLLoader
+    @FXML 
+    private ComboBox cboTipo; 
     
-    @FXML // fx:id="cboTipo"
-    private ListView lvListar; // Value injected by FXMLLoader
+    @FXML 
+    private ListView lvListar; 
 
-    @FXML // fx:id="lblGanancias"
-    private Label lblGanancias; // Value injected by FXMLLoader
+    @FXML 
+    private Label lblGanancias; 
+    
+    @FXML 
+    private Label lblMensaje; 
 
-    @FXML // fx:id="txtCantidadCarros"
-    private TextField txtCantidadCarros; // Value injected by FXMLLoader
+    @FXML 
+    private TextField txtCantidadCarros; 
 
     @FXML // fx:id="txtCantidadMotos"
-    private TextField txtCantidadMotos; // Value injected by FXMLLoader
-
-    @FXML // fx:id="txtDia"
-    private TextField txtDia; // Value injected by FXMLLoader
+    private TextField txtCantidadMotos; 
 
     @FXML // fx:id="txtModelo"
-    private TextField txtModelo; // Value injected by FXMLLoader
+    private TextField txtModelo;
 
     @FXML // fx:id="txtPlaca"
-    private TextField txtPlaca; // Value injected by FXMLLoader
+    private TextField txtPlaca; 
     
     Parqueadero par = new Parqueadero();
-    
-
+   
     @FXML
     void agregar(ActionEvent event) {
-
+    	if(!(txtPlaca.getText().isEmpty() && txtModelo.getText().isEmpty() && cboTipo.getSelectionModel().isEmpty())) {
+    		
     	String tipo = cboTipo.getSelectionModel().getSelectedItem().toString();
     	String placa = txtPlaca.getText();
     	String modelo = txtModelo.getText();
     	
     	String msj = par.anadir(placa, modelo, tipo);
+    	lblMensaje.setText(msj);
+    	mostrarTotal();
     	
-    	
+    	}
+    		else lblMensaje.setText("Ingrese todos los datos");
     }
 
     @FXML
     void limpiar(ActionEvent event) {
-
+    	limpiarCampos();
     }
 
     @FXML
     void reiniciar(ActionEvent event) {
 
+    	par.reiniciar();
+    	mostrarTotal();
     }
+    
 
     @FXML
     void totalizar(ActionEvent event) {
+
+    	String msj = par.totalizar();
+    	lblGanancias.setText(msj);
+    }
+    
+    
+    @FXML
+    void eliminar(ActionEvent event) {
+    	if(!txtPlaca.getText().isEmpty()) {
+    	String placa = txtPlaca.getText();
+    	String msj = par.eliminar(placa);
+    	lblMensaje.setText(msj);
+    	mostrarTotal();
+    	}
+    	else lblMensaje.setText("Ingrese la placa.");
 
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
-    	ObservableList<String> list = FXCollections.observableArrayList("Moto", "Carro");
+    	
+    	ObservableList<String> list = FXCollections.observableArrayList("Moto", "Carro"); 
     	cboTipo.setItems(list);
-        assert cboTipo != null : "fx:id=\"cboTipo\" was not injected: check your FXML file 'Untitled'.";
-        assert lblGanancias != null : "fx:id=\"lblGanancias\" was not injected: check your FXML file 'Untitled'.";
-        assert txtCantidadCarros != null : "fx:id=\"txtCantidadCarros\" was not injected: check your FXML file 'Untitled'.";
-        assert txtCantidadMotos != null : "fx:id=\"txtCantidadMotos\" was not injected: check your FXML file 'Untitled'.";
-        assert txtDia != null : "fx:id=\"txtDia\" was not injected: check your FXML file 'Untitled'.";
-        assert txtModelo != null : "fx:id=\"txtModelo\" was not injected: check your FXML file 'Untitled'.";
-        assert txtPlaca != null : "fx:id=\"txtPlaca\" was not injected: check your FXML file 'Untitled'.";
+    	assert cboTipo != null : "fx:id=\"cboTipo\" was not injected: check your FXML file 'ParqueaderoVista.fxml'.";
+        assert lblGanancias != null : "fx:id=\"lblGanancias\" was not injected: check your FXML file 'ParqueaderoVista.fxml'.";
+        assert lblMensaje != null : "fx:id=\"lblMensaje\" was not injected: check your FXML file 'ParqueaderoVista.fxml'.";
+        assert lvListar != null : "fx:id=\"lvListar\" was not injected: check your FXML file 'ParqueaderoVista.fxml'.";
+        assert txtCantidadCarros != null : "fx:id=\"txtCantidadCarros\" was not injected: check your FXML file 'ParqueaderoVista.fxml'.";
+        assert txtCantidadMotos != null : "fx:id=\"txtCantidadMotos\" was not injected: check your FXML file 'ParqueaderoVista.fxml'.";
+        assert txtModelo != null : "fx:id=\"txtModelo\" was not injected: check your FXML file 'ParqueaderoVista.fxml'.";
+        assert txtPlaca != null : "fx:id=\"txtPlaca\" was not injected: check your FXML file 'ParqueaderoVista.fxml'.";
+   }
+    
+   private void limpiarCampos() {
+	   txtPlaca.clear();
+	   txtModelo.clear();
+	   cboTipo.getSelectionModel().clearSelection();
+   }
 
-    }
-
+   private void mostrarTotal() {
+	   txtCantidadMotos.setText(par.getContMotos() + "");
+	   txtCantidadCarros.setText(par.getContCarros() + "");
+	   lvListar.getItems().clear();
+	   lvListar.getItems().addAll(par.getVehiculo());
+   }
 }
