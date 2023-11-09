@@ -8,7 +8,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import parqueadero.modelo.Parqueadero;
 
 public class ParqueaderoControlador {
 
@@ -20,6 +22,9 @@ public class ParqueaderoControlador {
 
     @FXML // fx:id="cboTipo"
     private ComboBox cboTipo; // Value injected by FXMLLoader
+    
+    @FXML // fx:id="cboTipo"
+    private ListView lvListar; // Value injected by FXMLLoader
 
     @FXML // fx:id="lblGanancias"
     private Label lblGanancias; // Value injected by FXMLLoader
@@ -38,10 +43,20 @@ public class ParqueaderoControlador {
 
     @FXML // fx:id="txtPlaca"
     private TextField txtPlaca; // Value injected by FXMLLoader
+    
+    Parqueadero par = new Parqueadero();
+    
 
     @FXML
     void agregar(ActionEvent event) {
 
+    	String tipo = cboTipo.getSelectionModel().getSelectedItem().toString();
+    	String placa = txtPlaca.getText();
+    	String modelo = txtModelo.getText();
+    	
+    	String msj = par.anadir(placa, modelo, tipo);
+    	
+    	
     }
 
     @FXML
@@ -51,13 +66,6 @@ public class ParqueaderoControlador {
 
     @FXML
     void reiniciar(ActionEvent event) {
-
-    }
-
-    @FXML
-    void tipo(ActionEvent event) {
-    	
-    	String s = cboTipo.getSelectionModel().getSelectedItem().toString();
 
     }
 
