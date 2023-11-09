@@ -97,4 +97,46 @@ private ArrayList<Vehiculo> vhc;
 		return null;
 	}
 
+	public Vehiculo mostrarPrimero() {
+		
+		return vhc.get(0);
+	}
+	
+	public Vehiculo mostrarUltimo() {
+		return vhc.get(vhc.size()-1);
+	}
+	
+	public Vehiculo mostrarSiguiente(String placa) {
+		int i = 0;
+		for(Vehiculo vhc1 : vhc) {
+			if(vhc1.getPlaca().equalsIgnoreCase(placa)) {
+				if(i< vhc.size()-1) {
+					System.out.println("Siguiente");
+					return vhc.get(i+1);
+				}
+				else 
+					System.out.println("No se ejecuto siguiente");
+					return vhc1;
+			}
+			i++;
+		}
+		return null;
+	}
+	
+	public Vehiculo mostrarAnterior(String placa) {
+		int i = 0;
+		for(Vehiculo vhc1 : vhc) {
+			if(vhc1.getPlaca().equalsIgnoreCase(placa)) {
+				if(i>0) {
+					System.out.println("Anterior");
+					return vhc.get(i-1);
+				}
+				else
+					System.out.println("No se ejecuto anterior");
+					return vhc1;
+			}
+			i++;
+		}
+		return null;
+	}
 }

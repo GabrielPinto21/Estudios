@@ -57,32 +57,42 @@ public class ImpuestosControlador {
 
     @FXML
     void anadir(ActionEvent event) {
-    	boolean cbPronto = cbProntoPago.isSelected();
-    	boolean cbServicio = cbServicioPublico.isSelected();
-    	boolean cbTraslado = cbTrasladoCuenta.isSelected();
-    	String placa = txtPlaca.getText();
-    	String valor = txtValor.getText();
-    	String modelo = txtModelo.getText();
-    	String linea = txtLinea.getText();
-    	String marca = txtMarca.getText();
-    	String resultado = txtResultado.getText();
     	
-    	if (placa != null && valor != null && modelo != null && linea != null && marca != null) {
-    		int modeloInt = Integer.parseInt(modelo);
-        	double valorDouble = Double.parseDouble(valor);
-        	double resultadoDouble = Double.parseDouble(resultado);
+    	if(!txtPlaca.getText().isEmpty() && !txtValor.getText().isEmpty() && !txtModelo.getText().isEmpty() && !txtLinea.getText().isEmpty() && !txtMarca.getText().isEmpty()) {
+    		boolean cbPronto = cbProntoPago.isSelected();
+        	boolean cbServicio = cbServicioPublico.isSelected();
+        	boolean cbTraslado = cbTrasladoCuenta.isSelected();
+        	String placa = txtPlaca.getText();
+        	String valor = txtValor.getText();
+        	String modelo = txtModelo.getText();
+        	String linea = txtLinea.getText();
+        	String marca = txtMarca.getText();
+        	String resultado = txtResultado.getText();
         	
-        	String msg = imp.anadirVehiculo(placa, marca, linea, modeloInt, valorDouble, cbPronto, cbServicio, cbTraslado, resultadoDouble);
-        	lblMensaje.setText(msg);
-        	limpiarCampos();
+        	if (placa != null && valor != null && modelo != null && linea != null && marca != null) {
+        		int modeloInt = 0;
+        		double valorDouble = 0;
+        		double resultadoDouble = 0;
+        		modeloInt = Integer.parseInt(modelo);
+        		valorDouble = Double.parseDouble(valor);
+            	resultadoDouble = Double.parseDouble(resultado);
+            	if(txtResultado.getText().isEmpty()) {
+            		lblMensaje.setText("Calcule el valor del vechiculo para registrar.");
+            		return;
+            	}
+            	String msg = imp.anadirVehiculo(placa, marca, linea, modeloInt, valorDouble, cbPronto, cbServicio, cbTraslado, resultadoDouble);
+            	lblMensaje.setText(msg);
+            	limpiarCampos();
+            	return;
+        	}
     	}
-    	else {
-    		lblMensaje.setText("Ingrese todos los campos");	
-    	}
+    	lblMensaje.setText("Ingrese todos los campos");
+
     }
 
     @FXML
     void buscar(ActionEvent event) {
+    	
     	System.out.println("Cobtroller.buscar");
     	
     	String placa = txtPlaca.getText();
@@ -95,15 +105,19 @@ public class ImpuestosControlador {
     			txtMarca.setText(msj.getMarca());
         		txtLinea.setText(msj.getLinea());
         		txtModelo.setText(msj.getModelo() + "");
-        		txtValor.setText(msj.getValor()+ "");
+        		txtValor.setText((msj.getValor()+ ""));
         		cbProntoPago.setSelected(msj.isCbPronto());
         		cbServicioPublico.setSelected(msj.isCbServicio());
         		cbTrasladoCuenta.setSelected(msj.isCbTraslado());
-        		txtResultado.setText(msj.getResultado() + "");
+        		txtResultado.setText(String.valueOf(msj.getResultado()));
     		}
-    	}else {
-    		lblMensaje.setText("Ingrese la placa del vehiculo.");
+    		else {
+    			lblMensaje.setText("Este vehiculo no se encuentra registrado");
+    			return;
+    		}
     	}
+    	lblMensaje.setText("Por favor ingrese la placa.");
+
     }
 
     @FXML
@@ -133,6 +147,70 @@ public class ImpuestosControlador {
     	limpiarCampos();
     }
 
+    @FXML
+    void siguiente(ActionEvent event) {
+    	Vehiculo msj = imp.mostrarSiguiente(txtPlaca.getText());
+    	if(msj != null) {
+    		txtPlaca.setText(msj.getPlaca());
+			txtMarca.setText(msj.getMarca());
+    		txtLinea.setText(msj.getLinea());
+    		txtModelo.setText(msj.getModelo() + "");
+    		txtValor.setText((msj.getValor()+ ""));
+    		cbProntoPago.setSelected(msj.isCbPronto());
+    		cbServicioPublico.setSelected(msj.isCbServicio());
+    		cbTrasladoCuenta.setSelected(msj.isCbTraslado());
+    		txtResultado.setText(String.valueOf(msj.getResultado()));
+		}
+    }
+    
+    @FXML
+    void anterior(ActionEvent event) {
+    	Vehiculo msj = imp.mostrarAnterior(txtPlaca.getText());
+    	if(msj != null) {
+    		txtPlaca.setText(msj.getPlaca());
+			txtMarca.setText(msj.getMarca());
+    		txtLinea.setText(msj.getLinea());
+    		txtModelo.setText(msj.getModelo() + "");
+    		txtValor.setText((msj.getValor()+ ""));
+    		cbProntoPago.setSelected(msj.isCbPronto());
+    		cbServicioPublico.setSelected(msj.isCbServicio());
+    		cbTrasladoCuenta.setSelected(msj.isCbTraslado());
+    		txtResultado.setText(String.valueOf(msj.getResultado()));
+		}
+    }
+    
+    @FXML
+    void irInicio(ActionEvent event) {
+    	Vehiculo msj = imp.mostrarPrimero();
+    	if(msj != null) {
+    		txtPlaca.setText(msj.getPlaca());
+			txtMarca.setText(msj.getMarca());
+    		txtLinea.setText(msj.getLinea());
+    		txtModelo.setText(msj.getModelo() + "");
+    		txtValor.setText((msj.getValor()+ ""));
+    		cbProntoPago.setSelected(msj.isCbPronto());
+    		cbServicioPublico.setSelected(msj.isCbServicio());
+    		cbTrasladoCuenta.setSelected(msj.isCbTraslado());
+    		txtResultado.setText(String.valueOf(msj.getResultado()));
+		}
+    }
+    
+    @FXML
+    void irFinal(ActionEvent event) {
+    	Vehiculo msj = imp.mostrarUltimo();
+    	if(msj != null) {
+    		txtPlaca.setText(msj.getPlaca());
+			txtMarca.setText(msj.getMarca());
+    		txtLinea.setText(msj.getLinea());
+    		txtModelo.setText(msj.getModelo() + "");
+    		txtValor.setText((msj.getValor()+ ""));
+    		cbProntoPago.setSelected(msj.isCbPronto());
+    		cbServicioPublico.setSelected(msj.isCbServicio());
+    		cbTrasladoCuenta.setSelected(msj.isCbTraslado());
+    		txtResultado.setText(String.valueOf(msj.getResultado()));
+    	}
+    }
+    
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
         assert cbProntoPago != null : "fx:id=\"cbProntoPago\" was not injected: check your FXML file 'Untitled'.";
