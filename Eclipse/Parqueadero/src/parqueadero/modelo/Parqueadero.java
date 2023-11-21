@@ -65,6 +65,7 @@ public class Parqueadero {
 	public String totalizar() {
 		int gananciasCarros = 0, gananciasMotos = 0;
 		
+		if (contCarros == 0 && contMotos == 0) return "No se encuentran vehiculos registrados.";
 		
 		for (Vehiculo vh1 : vehiculo) {
 			if(vh1 instanceof Carro) {
@@ -87,16 +88,19 @@ public class Parqueadero {
 				}
 			}
 		}
+		
+		
 		return "El total de carros es " + contCarros + " con un valor de " + gananciasCarros + ", el total de motos es " + contMotos + 
 				" para un valor de " + gananciasMotos + ", el total de vehículos fue " + (contCarros+contMotos) +" y el total recaudado " + 
 				(gananciasCarros+gananciasMotos) + ".";
 		
 	}
 
-	public String eliminar(String Placa) {
-	
+	public String eliminar(Vehiculo vhSeleccionado) {
+		
+		int i = 0;
 		for(Vehiculo vh1 : vehiculo) {
-			if(vh1.getPlaca().equalsIgnoreCase(Placa)) {
+			if(vh1.getPlaca().equalsIgnoreCase(vhSeleccionado.getPlaca())) {
 				if(vh1 instanceof Carro) {
 				contCarros--;
 			}else contMotos--;

@@ -11,6 +11,9 @@ private ArrayList<Vehiculo> vhc;
 	}
 	
 	public String anadirVehiculo(String placa, String marca, String linea, int modelo, Double valor, boolean cbPronto, boolean cbServicio, boolean cbTraslado, double resultado) {
+		
+		if(placa.isEmpty() && marca.isEmpty() && linea.isEmpty() && valor == 0) return "Ingrese todos los datos";
+		
 		for(Vehiculo vhcI : vhc) {
 			if(placa.equalsIgnoreCase(vhcI.getPlaca())) {
 				return "Este vehículo ya se encuentra registrado";
@@ -24,6 +27,9 @@ private ArrayList<Vehiculo> vhc;
 	}
 	
 	public String calcularImpuestos(String precio, boolean cbPago, boolean cbServicio, boolean cbTraslado) {
+		
+		
+		
 		double precioDouble = Double.parseDouble(precio);
 		double precioTotal;
 		
@@ -70,6 +76,7 @@ private ArrayList<Vehiculo> vhc;
 	}
 	
 	public String eliminarVehiculo(String placa) {
+		
 		for(Vehiculo vh1 : vhc) {
 			if(placa.equalsIgnoreCase(vh1.getPlaca())) {
 				vhc.remove(vh1);
@@ -98,11 +105,12 @@ private ArrayList<Vehiculo> vhc;
 	}
 
 	public Vehiculo mostrarPrimero() {
-		
+		if (vhc.isEmpty()) return null;
 		return vhc.get(0);
 	}
 	
 	public Vehiculo mostrarUltimo() {
+		if (vhc.isEmpty()) return null;
 		return vhc.get(vhc.size()-1);
 	}
 	

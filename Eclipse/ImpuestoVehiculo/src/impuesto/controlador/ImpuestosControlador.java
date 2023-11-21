@@ -58,7 +58,7 @@ public class ImpuestosControlador {
     @FXML
     void anadir(ActionEvent event) {
     	
-    	if(!txtPlaca.getText().isEmpty() && !txtValor.getText().isEmpty() && !txtModelo.getText().isEmpty() && !txtLinea.getText().isEmpty() && !txtMarca.getText().isEmpty()) {
+    	if(!txtPlaca.getText().isEmpty() && !txtResultado.getText().isEmpty() && !txtValor.getText().isEmpty() && !txtModelo.getText().isEmpty() && !txtLinea.getText().isEmpty() && !txtMarca.getText().isEmpty()) {
     		boolean cbPronto = cbProntoPago.isSelected();
         	boolean cbServicio = cbServicioPublico.isSelected();
         	boolean cbTraslado = cbTrasladoCuenta.isSelected();
@@ -122,23 +122,26 @@ public class ImpuestosControlador {
 
     @FXML
     void calcularImpuestos(ActionEvent event) {
+    	if(!txtValor.getText().isEmpty()) {
     	boolean cbPronto = cbProntoPago.isSelected();
     	boolean cbServicio = cbServicioPublico.isSelected();
     	boolean cbTraslado = cbTrasladoCuenta.isSelected();
     	String valor = txtValor.getText();
     	String msg = imp.calcularImpuestos(valor, cbPronto, cbServicio, cbTraslado);
     	txtResultado.setText(msg);
+    	}
+    	else lblMensaje.setText("Ingreso todos los campos.");
     }
 
     @FXML
     void eliminar(ActionEvent event) {
     	String placa = txtPlaca.getText();
     	
-    	if(placa != null) {
+    	if(!placa.isEmpty()) {
     		String msj = imp.eliminarVehiculo(placa);
     		lblMensaje.setText(msj);
     	}
-    	lblMensaje.setText("Por favor ingrese la placa.");
+    	else lblMensaje.setText("Por favor ingrese la placa.");
     }
     
 
@@ -236,6 +239,7 @@ public class ImpuestosControlador {
     	txtValor.clear();
     	txtResultado.clear();
     	txtPlaca.clear();
+    	lblMensaje.setText("");
     }
 
 }

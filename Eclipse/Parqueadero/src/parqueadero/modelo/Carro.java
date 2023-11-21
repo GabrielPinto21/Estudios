@@ -13,6 +13,6 @@ public class Carro extends Vehiculo{
 	}
 
 	public String toString () {
-		return   "Tipo: carro - Placa: " + placa + " - Modelo: " + modelo;
+		return   "Tipo: Carro - Placa: " + placa + " - Modelo: " + modelo;
 	}
 	}

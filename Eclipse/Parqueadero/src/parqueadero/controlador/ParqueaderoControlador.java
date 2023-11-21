@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import parqueadero.modelo.Parqueadero;
+import parqueadero.modelo.Vehiculo;
 
 public class ParqueaderoControlador {
 
@@ -23,7 +24,7 @@ public class ParqueaderoControlador {
     private ComboBox cboTipo; 
     
     @FXML 
-    private ListView lvListar; 
+    private ListView<Vehiculo> lvListar; 
 
     @FXML 
     private Label lblGanancias; 
@@ -47,7 +48,8 @@ public class ParqueaderoControlador {
    
     @FXML
     void agregar(ActionEvent event) {
-    	if(!(txtPlaca.getText().isEmpty() && txtModelo.getText().isEmpty() && cboTipo.getSelectionModel().isEmpty())) {
+    	
+    	if(!(txtPlaca.getText().isEmpty() || txtModelo.getText().isEmpty() || cboTipo.getSelectionModel().isEmpty())) {
     		
     	String tipo = cboTipo.getSelectionModel().getSelectedItem().toString();
     	String placa = txtPlaca.getText();
@@ -55,6 +57,7 @@ public class ParqueaderoControlador {
     	
     	String msj = par.anadir(placa, modelo, tipo);
     	lblMensaje.setText(msj);
+    	limpiarCampos();
     	mostrarTotal();
     	
     	}
@@ -84,14 +87,15 @@ public class ParqueaderoControlador {
     
     @FXML
     void eliminar(ActionEvent event) {
-    	if(!txtPlaca.getText().isEmpty()) {
-    	String placa = txtPlaca.getText();
-    	String msj = par.eliminar(placa);
-    	lblMensaje.setText(msj);
-    	mostrarTotal();
-    	}
-    	else lblMensaje.setText("Ingrese la placa.");
-
+    
+    	
+    	Vehiculo vhSeleccionado = (Vehiculo) lvListar.getSelectionModel().getSelectedItem();
+    	par.eliminar(vhSeleccionado);
+    	
+    	lvListar.getItems().clear();
+    	lvListar.getItems().addAll(par.getVehiculo());
+    	txtCantidadCarros.setText(par.getContCarros() + "");
+    	txtCantidadMotos.setText(par.getContMotos() + "");
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
@@ -113,6 +117,7 @@ public class ParqueaderoControlador {
 	   txtPlaca.clear();
 	   txtModelo.clear();
 	   cboTipo.getSelectionModel().clearSelection();
+	   lblMensaje.setText("");
    }
 
    private void mostrarTotal() {
