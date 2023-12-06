@@ -2,8 +2,8 @@ package parqueadero.modelo;
 
 public class Moto extends Vehiculo{
 	
-	public Moto (String placa, int modelo) {
-		super (placa, modelo);
+	public Moto (String placa, int modelo, int dia) {
+		super (placa, modelo, dia);
 	}
 	
 	public boolean verificarPlaca() {
@@ -12,6 +12,6 @@ public class Moto extends Vehiculo{
 	}
 
 	public String toString () {
-		return   "Tipo: Moto - Placa: " + placa + " - Modelo: " + modelo;
+		return   "Tipo: Moto - Placa: " + placa + " - Modelo: " + modelo + " - Dias transcurridos: " + dia;
 	}
 }

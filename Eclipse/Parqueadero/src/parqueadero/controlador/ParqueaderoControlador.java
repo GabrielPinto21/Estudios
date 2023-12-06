@@ -24,6 +24,9 @@ public class ParqueaderoControlador {
     private ComboBox cboTipo; 
     
     @FXML 
+    private ComboBox cboDia;
+    
+    @FXML 
     private ListView<Vehiculo> lvListar; 
 
     @FXML 
@@ -49,15 +52,15 @@ public class ParqueaderoControlador {
     @FXML
     void agregar(ActionEvent event) {
     	
-    	if(!(txtPlaca.getText().isEmpty() || txtModelo.getText().isEmpty() || cboTipo.getSelectionModel().isEmpty())) {
+    	if(!(txtPlaca.getText().isEmpty() || txtModelo.getText().isEmpty() || cboTipo.getSelectionModel().isEmpty()) || cboTipo.getSelectionModel().isEmpty()) {
     		
     	String tipo = cboTipo.getSelectionModel().getSelectedItem().toString();
+    	String dia = cboDia.getSelectionModel().getSelectedItem().toString();
     	String placa = txtPlaca.getText();
     	String modelo = txtModelo.getText();
     	
-    	String msj = par.anadir(placa, modelo, tipo);
+    	String msj = par.anadir(placa, modelo, tipo,dia);
     	lblMensaje.setText(msj);
-    	limpiarCampos();
     	mostrarTotal();
     	
     	}
@@ -103,6 +106,8 @@ public class ParqueaderoControlador {
     	
     	ObservableList<String> list = FXCollections.observableArrayList("Moto", "Carro"); 
     	cboTipo.setItems(list);
+    	ObservableList<String> dia = FXCollections.observableArrayList(par.getDia()); 
+    	cboDia.setItems(dia);
     	assert cboTipo != null : "fx:id=\"cboTipo\" was not injected: check your FXML file 'ParqueaderoVista.fxml'.";
         assert lblGanancias != null : "fx:id=\"lblGanancias\" was not injected: check your FXML file 'ParqueaderoVista.fxml'.";
         assert lblMensaje != null : "fx:id=\"lblMensaje\" was not injected: check your FXML file 'ParqueaderoVista.fxml'.";
