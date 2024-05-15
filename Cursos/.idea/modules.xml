@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CursoUdemy/Arreglos/Arreglos.iml" filepath="$PROJECT_DIR$/CursoUdemy/Arreglos/Arreglos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Cursos.iml" filepath="$PROJECT_DIR$/.idea/Cursos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CursoUdemy/HolaMundo/HolaMundo.iml" filepath="$PROJECT_DIR$/CursoUdemy/HolaMundo/HolaMundo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CursoUdemy/Matrices/Matrices.iml" filepath="$PROJECT_DIR$/CursoUdemy/Matrices/Matrices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CursoUdemy/Poo/Poo.iml" filepath="$PROJECT_DIR$/CursoUdemy/Poo/Poo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CursoUdemy/paquetes/paquetes.iml" filepath="$PROJECT_DIR$/CursoUdemy/paquetes/paquetes.iml" />
+    </modules>
+  </component>
+</project>
