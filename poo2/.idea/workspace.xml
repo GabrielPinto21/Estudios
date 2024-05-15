@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f3e4edae-6a25-4cab-af34-9c657d79723b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Cursos/CursoUdemy/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Cursos/CursoUdemy/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cursos/CursoUdemy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Cursos/CursoUdemy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/AreaDelCirculo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/ArgumentosLineaComando.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/ArgumentosLineaComandoCalculadora.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/AutoboxingInteger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/CalcularEdad.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/ConversionDeTipos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploAsignarPropiedadesDeSistema.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploClaseMath.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploClaseMathRandom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploEjecutarProgramaSO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploJavaUtilCalendar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploJavaUtilDate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploJavaUtilDateParse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploMetodoGetClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploPropiedadesDeSistema.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploString.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploStringConcatenacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploStringExtensionArchivo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploStringInmutable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploStringMetodos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploStringMetodosArreglo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploStringTestRendimientoConcat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploStringValidar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/EjemploVariablesDeEntorno.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/HolaMundo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/OperadorInstanceof.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/OperadorInstanceofTiposGenericos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/OperadorTernario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/OperadorTernarioNumeroMayor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/OperadoresAritmeticos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/OperadoresAsignacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/OperadoresIncrementales.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/OperadoresLogico.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/OperadoresLogicosLogin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/OperadoresRelacionales.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/OperadoresUnarios.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/PasarPorReferencia.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/PasarPorReferencia2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/PasarPorValor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/Persona.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/PrecedenciaOperadores.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/PrimitivosBoolean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/PrimitivosCaracteres.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/PrimitivosEnteros.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/PrimitivosFloat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/SentenciaFor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/SentenciaForArreglo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/SentenciaForEach.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/SentenciaIfElse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/SentenciaIfElseNumDiasMes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/SentenciaSwitchCase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/SentenciaSwitchCaseNumDiasMes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/SentenciaWhile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/SentenciasBucleEtiquetas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/SentenciasBucleEtiquetasBuscar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/SistemasNumericos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/SistemasNumericosEntradaScanner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/WrapperBoolean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/WrapperInteger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/WrapperOperadoresRelacionales.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Cursos/config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/Arreglos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/Capicua.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/Capicua5Num.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/DigitosMultiplicacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/ExamenFinal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/Fecha17_04_2023.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/FechaFutura.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/FechaLong.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/FechaLong2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/FerreteriaMiCasa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/Horoscopo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/J2048.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/Lavadero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/Multiplicacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/Multiplos3y5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/Multiplos8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/NumeroImpar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/NumeroLong.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/NumeroPar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/NumeroPrimo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/ParqueDelCafePrevio2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/Parqueadero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/Perinola.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/PrimerPrevio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/Promedio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/PromedioSuma10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/Quiz.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/Serie20.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/SerieNumerica.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/Suma.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/SumaA_B.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/Sumatoria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/SupermercadoJM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/TablaMultiplicar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/TablaMultiplicar11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/TablaX.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/TiendaTotto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/calculadora.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/dsa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/edad.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Universidad/imprimirNumerosPrimos.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/POO2_U3_S6_ArquitecturaTrabajo" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2gBr1FgmUz0jwNjuinAv4dta7XT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Gabriel Pinto/Estudios/poo2/POO2_U3_S6_ArquitecturaTrabajo",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f3e4edae-6a25-4cab-af34-9c657d79723b" name="Changes" comment="" />
+      <created>1715181595108</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715181595108</updated>
+      <workItem from="1715181596099" duration="82000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
